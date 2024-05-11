@@ -1,9 +1,11 @@
-#pragma once;
+#pragma once
 
 #include <vector>
 #include <string>
 #include <unordered_map>
 #include <cassert>
+
+namespace preorder_traversal {
 
 template <typename tag_t>
 struct node {
@@ -25,7 +27,7 @@ public:
     typedef std::unordered_map<tag_t, node<tag_t>> nodes_set_t;
 
     tag_set_t preorder;
-    int (*user_cmp)(tag_t, tastringg_t);
+    int (*user_cmp)(tag_t, tag_t);
     nodes_set_t nodes;
     tag_t leaf;
     tag_t left_leaf, right_leaf;
@@ -107,3 +109,4 @@ public:
         return result;
     }
 };
+}

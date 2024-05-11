@@ -29,11 +29,8 @@ else()
 endif()
 
 add_library(preorder_traversal INTERFACE)
+
 target_include_directories(preorder_traversal INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_compile_features(preorder_traversal INTERFACE cxx_std_17)
 
-target_compile_options(
-        preorder_traversal INTERFACE
-        $<BUILD_INTERFACE:${library_compile_options}>
-        )
